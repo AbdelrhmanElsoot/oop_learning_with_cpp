@@ -59,20 +59,76 @@ public:
 	}
 };
 
+class CarWithConstructor {
+public : 
+	// Default Constructor 
+	CarWithConstructor() {
+		name = "Car"; 
+		speed = 100; 
+		setType(); 
+	}
+	CarWithConstructor(string carName , int carSpeed) {
+		setName(carName);
+		setSpeed(carSpeed);
+		setType();
+
+	}
+	void setName(string carName) {
+		name = carName;
+	}
+	void setSpeed(int carSpeed) {
+		speed = carSpeed;
+
+	}
+	void getCarData()
+	{
+		cout << name << " -------------------------> " << type << endl;
+	}
+private : 
+	string name; 
+	string type; 
+	int speed; 
+
+	
+	void setType() {
+		type = (speed > 180) ? "Race Car" : "Normal Car"; 
+	}
+
+	
+};
+
 
 
 int main() {
 	Car car1; // make object car1 from Car
+	// set model , color , date , speed for car1
 	car1.model = "BMW";
 	car1.color = "Black";
 	car1.date = "2005";
 	car1.speed = 199;
-	// set model , color , date , speed for car1
-
-	car1.displayInfo();
 	// show data of car1
+	car1.displayInfo();
+
+	cout << "=====================================================================\n"; 
 
 	CarWithGeterSeter car2;
+	//set data for car2 by seterFn 
 	car2.setCarData("Volvo", "Blue", 190);
+	//get data for car2 by geterFn 
 	car2.getCarData();
+
+	cout << "=====================================================================\n";
+
+	CarWithConstructor car3; 
+	car3.getCarData(); 
+
+	cout << "=====================================================================\n";
+
+	CarWithConstructor car4("BMW" , 200);
+	car4.getCarData(); 
+
+	cout << "=====================================================================\n";
+
+
+
 }
