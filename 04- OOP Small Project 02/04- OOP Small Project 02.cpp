@@ -28,7 +28,7 @@ public :
 		return age; 
 	}
 
-	void displayInfo() {
+	virtual void displayInfo() {
 		cout << name << endl; 
 		cout << age << endl; 
 	}
@@ -50,6 +50,11 @@ public :
 	float getStudentGpa() {
 		return gpa; 
 	}
+	void displayInfo() {
+		cout << name << endl; 
+		cout << age << endl; 
+		cout << gpa << endl; 
+	}
 
 
 };
@@ -67,6 +72,11 @@ public :
 	}
 	string getTecherSubject() {
 		return subject; 
+	}
+	void displayInfo() {
+		cout << name << endl;
+		cout << age << endl;
+		cout << subject << endl;
 	}
 	
 };
